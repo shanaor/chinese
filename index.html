@@ -3,49 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinese Acupuncture</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Futuristic Chinese Acupuncture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="particles-js"></div>
     <header>
-        <h1>Chinese Acupuncture</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="card fade-in">
-            <h2>Welcome to Our Chinese Acupuncture Clinic</h2>
-            <p>Discover the ancient healing art of Chinese acupuncture. Our experienced practitioners are dedicated to improving your health and well-being through traditional techniques.</p>
-            <a href="about.html" class="btn">Learn More</a>
+        <div class="container">
+            <h1>Neo Acupuncture</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="card fade-in">
-            <h3>Benefits of Acupuncture</h3>
-            <ul>
-                <li><i class="fas fa-check"></i> Pain relief</li>
-                <li><i class="fas fa-check"></i> Stress reduction</li>
-                <li><i class="fas fa-check"></i> Improved sleep</li>
-                <li><i class="fas fa-check"></i> Enhanced energy and mood</li>
-            </ul>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to the Future of Healing</h2>
+                <p>Experience the ancient art of acupuncture enhanced by cutting-edge technology.</p>
+                <a href="#" class="btn">Discover More</a>
+            </div>
+        </section>
+        <div class="container">
+            <div class="card fade-in-up">
+                <h3>Benefits of Neo Acupuncture</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Advanced pain relief</li>
+                    <li><i class="fas fa-check"></i> Stress reduction and mental clarity</li>
+                    <li><i class="fas fa-check"></i> Enhanced sleep quality</li>
+                    <li><i class="fas fa-check"></i> Boosted energy and vitality</li>
+                </ul>
+            </div>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Chinese Acupuncture Clinic. All rights reserved.</p>
+        <p>&copy; 2024 Neo Acupuncture Clinic. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('particles.js loaded');
+        });
+
         document.addEventListener('DOMContentLoaded', (event) => {
             const cards = document.querySelectorAll('.card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('fade-in');
-                }, 200 * index);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                observer.observe(card);
             });
         });
     </script>
