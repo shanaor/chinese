@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Chinese Acupuncture</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,19 +21,19 @@
         </ul>
     </nav>
     <main>
-        <div class="card">
+        <div class="card fade-in">
             <h2>About Us</h2>
             <p>Our Chinese Acupuncture Clinic has been serving the community for over 20 years. We are dedicated to providing high-quality, traditional Chinese medicine treatments to improve your overall health and well-being.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
             <h3>Our Team</h3>
             <ul>
-                <li>Dr. Li Wei - Chief Acupuncturist</li>
-                <li>Dr. Zhang Min - Herbalist and Acupuncturist</li>
-                <li>Sarah Johnson - Clinic Manager</li>
+                <li><i class="fas fa-user-md"></i> Dr. Li Wei - Chief Acupuncturist</li>
+                <li><i class="fas fa-user-md"></i> Dr. Zhang Min - Herbalist and Acupuncturist</li>
+                <li><i class="fas fa-user"></i> Sarah Johnson - Clinic Manager</li>
             </ul>
         </div>
-        <div class="card">
+        <div class="card fade-in">
             <h3>Our Philosophy</h3>
             <p>We believe in a holistic approach to health, combining ancient wisdom with modern techniques to provide the best possible care for our patients.</p>
         </div>
@@ -40,5 +41,15 @@
     <footer>
         <p>&copy; 2024 Chinese Acupuncture Clinic. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, 200 * index);
+            });
+        });
+    </script>
 </body>
 </html>

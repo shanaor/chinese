@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Chinese Acupuncture</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,19 +22,23 @@
     </nav>
     <main>
         <h2>Our Services</h2>
-        <div class="card">
+        <div class="card fade-in">
+            <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
             <h3>Traditional Acupuncture</h3>
             <p>Using fine needles to stimulate specific points on the body to promote healing and balance.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
+            <div class="service-icon"><i class="fas fa-fire-alt"></i></div>
             <h3>Cupping Therapy</h3>
             <p>A technique that uses suction cups to improve blood flow and reduce muscle tension.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
+            <div class="service-icon"><i class="fas fa-leaf"></i></div>
             <h3>Herbal Medicine</h3>
             <p>Customized herbal formulas to support your body's natural healing processes.</p>
         </div>
-        <div class="card">
+        <div class="card fade-in">
+            <div class="service-icon"><i class="fas fa-sun"></i></div>
             <h3>Moxibustion</h3>
             <p>The burning of dried mugwort near acupuncture points to stimulate circulation and healing.</p>
         </div>
@@ -41,5 +46,15 @@
     <footer>
         <p>&copy; 2024 Chinese Acupuncture Clinic. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, 200 * index);
+            });
+        });
+    </script>
 </body>
 </html>
